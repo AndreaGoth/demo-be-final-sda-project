@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DatabaseExpander2 {
+public class DBExpenderCustomerOrder {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/sda-ecommerce";
         String user = "Andre";
@@ -15,23 +15,24 @@ public class DatabaseExpander2 {
             // Create a Statement object for executing SQL commands
             Statement statement = connection.createStatement();
 
-            // SQL command to create the customer table
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS customer ("
-                    + "customer_id INT AUTO_INCREMENT PRIMARY KEY, "
-                    + "first_name VARCHAR(50) NOT NULL, "
-                    + "last_name VARCHAR(50) NOT NULL, "
-                    + "email VARCHAR(100) NOT NULL UNIQUE, "
-                    + "phone VARCHAR(20), "
-                    + "address VARCHAR(255)"
+            // SQL command to create a new table with a different name, e.g., "customer_order"
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS customer_order ("
+                    + "order_id INT AUTO_INCREMENT PRIMARY KEY, "
+                    + "order_date DATE NOT NULL, "
+                    + "customer_id INT NOT NULL, "
+                    + "product_id INT NOT NULL, "
+                    + "quantity INT NOT NULL, "
+                    + "total_price DECIMAL(10, 2) NOT NULL"
                     + ")";
 
-            // Execute the SQL command to create the customer table
+            // Execute the SQL command to create the new table
             statement.executeUpdate(createTableSQL);
 
-            System.out.println("Customer table created successfully.");
+            System.out.println("Table created successfully.");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 }
+

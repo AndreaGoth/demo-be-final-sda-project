@@ -8,10 +8,10 @@ import lombok.Setter;
 import java.util.Set;
 
 @Entity
-@Table(name = "one")
+@Table(name = "ProductCategory")
 @Getter
 @Setter
-public class One {
+public class ProductCategory {
 
 
     @Id
@@ -23,6 +23,6 @@ public class One {
     private String category;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<Four> products;  // nu se vede in my sql, se realizeaza in spate ---
+    private Set<Product> products;  // nu se vede in my sql, se realizeaza in spate ---
     // --- mapare ajuta la debugging, ajuta la operatii, etc
 }

@@ -8,10 +8,10 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "two")
+@Table(name = "Country")
 @Getter
 @Setter
-public class Two {
+public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ public class Two {
 
     @OneToMany(mappedBy = "country") // country
     @JsonIgnore
-    private List<Three> states;
+    private List<State> states;
 }
 

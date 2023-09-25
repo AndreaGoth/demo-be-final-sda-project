@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "four")
+@Table(name = "Product")
 @Getter
 @Setter
-public class Four {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,5 +48,5 @@ public class Four {
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)  // category_id
-    private One category;
+    private ProductCategory category;
 }

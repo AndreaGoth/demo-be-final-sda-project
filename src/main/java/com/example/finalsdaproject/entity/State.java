@@ -6,21 +6,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "five")
+@Table(name = "State")
 @Getter
 @Setter
-public class Five {
-
+public class State {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "five1")
+    @Column(name = "id") // id
     private Long id;
 
-    @Column(name = "five2")
+    @Column(name = "name") // name
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "five_id")
-    private Four country;
+    @JoinColumn(name = "category_id")
+    private Country country;
+
 }
