@@ -5,27 +5,26 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.List;
 
 @Entity
 @Table(name = "two")
 @Getter
 @Setter
-public class Doi {
+public class Two {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id") //id
     private Long id;
 
-    @Column(name = "code")
+    @Column(name = "code") // code
     private String code;
 
-    @Column(name = "name")
+    @Column(name = "name") // name
     private String name;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country") // country
     @JsonIgnore
     private List<Three> states;
 }

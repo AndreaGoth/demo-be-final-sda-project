@@ -1,4 +1,4 @@
 package com.example.finalsdaproject.config;
 
-public class MyDataRestConfig {
+public class MyDataRestController {
 }

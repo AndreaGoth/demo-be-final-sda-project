@@ -1,9 +1,11 @@
+package com.example.finalsdaproject.dbexpender;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DatabaseExpander {
+public class DatabaseExpander2 {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/sda-ecommerce";
         String user = "Andre";
