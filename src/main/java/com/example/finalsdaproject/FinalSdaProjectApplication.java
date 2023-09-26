@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FinalSdaProjectApplication {
 
     public static void main(String[] args) {
+        // Start the Spring Boot application
         SpringApplication.run(FinalSdaProjectApplication.class, args);
     }
 
+    public String myMethod() {
+        return "Real Result";
+    }
 }
